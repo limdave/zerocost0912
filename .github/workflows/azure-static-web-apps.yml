@@ -30,7 +30,8 @@ jobs:
           ###### 프로젝트 구조에 맞게 아래 설정을 수정하세요 ######
           app_location: "/" # 소스 코드 위치
           api_location: ""  # Azure Functions 등 API가 없다면 비워둠
-          output_location: "dist" # 빌드 결과물 폴더 (예: dist, build)
+          output_location: "/" # 빌드 결과물 폴더 (예: dist, build)
+          skip_app_build: true  #일반 HTML, CSS 및 JavaScript 파일을 배포하는 경우 빌드 단계가 실제로 필요하지 않습니다. 
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
